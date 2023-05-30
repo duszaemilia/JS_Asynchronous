@@ -25,3 +25,22 @@ setTimeout(() => {
         console.log('run-again');
     }
 }, 15000);
+
+
+const receipt = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('kebab maj friend');
+    }, 3001);
+    setTimeout(() => {
+        reject('no kebab, łonna fajt?')
+    }, 3000);
+});
+
+console.log(receipt);
+receipt
+    .then((msg) => {
+        console.log(msg)
+    })
+    .catch((msg) => {
+        console.log(msg)
+    });
